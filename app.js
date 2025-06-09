@@ -4,6 +4,8 @@ const resetButton = document.getElementById('reset-button');
 const progressBar = document.getElementById('progress-bar');
 const startingMinutes = 1;
 let time = startingMinutes * 60;
+const totalDuration = 60;
+let timeLeft = totalDuration;
 let timerID;
 
 const countDown = document.getElementById('timer-display');
@@ -15,7 +17,7 @@ startButton.addEventListener("click", function() {
         seconds = seconds < 10 ? '0' + seconds : seconds;
         countDown.innerHTML = `${minutes}:${seconds}`;
         time--;
-        progressBar.value = time;
+        progressBar.value += 1;
     }, 1000);
 });
 
