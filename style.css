@@ -118,29 +118,35 @@ body, html {
     background: #49786c;
 }
 
+/* Pause Button */
 .timer-buttons button:nth-child(2) { /* Pause */
-    background: #e7eaf0;
-    color: #9698a6;
+    background: #c8ede3;
+    color: #568d7b;
     font-weight: 500;
+    border: none;
+    transition: background 0.17s, color 0.17s;
 }
-
 .timer-buttons button:nth-child(2):hover,
 .timer-buttons button:nth-child(2):focus {
-    background: #cfd5df;
-    color: #7e8294;
+    background: #b8d8cf;
+    color: #49786c;
 }
 
+/* Reset Button */
 .timer-buttons button:nth-child(3) { /* Reset */
     background: #fff;
     color: #568d7b;
-    border: 1.5px solid #e3ebe8;
+    border: 1.5px solid #b8d8cf;
     font-weight: 500;
+    transition: background 0.17s, color 0.17s, border-color 0.17s;
 }
-
 .timer-buttons button:nth-child(3):hover,
 .timer-buttons button:nth-child(3):focus {
-    background: #f2faf7;
+    background: #e4f5ef;
+    color: #49786c;
+    border-color: #81c7b8;
 }
+
 
 /* Progress Section */
 .progess-section {
@@ -157,6 +163,31 @@ body, html {
     accent-color: #568d7b;
     transition: value 0.5s;
 }
+
+/* Track: harmonious, soft version of the main teal */
+progress::-webkit-progress-bar {
+    background-color: #b8d8cf;   /* Light teal—flows with the fill color */
+    border-radius: 6px;
+}
+
+/* Fill: main brand teal */
+progress::-webkit-progress-value {
+    background-color: #568d7b;   /* Main accent teal */
+    border-radius: 6px;
+}
+
+/* Firefox Track */
+progress {
+    background-color: #b8d8cf;
+    border-radius: 6px;
+}
+
+/* Firefox Fill */
+progress::-moz-progress-bar {
+    background-color: #568d7b;
+    border-radius: 6px;
+}
+
 
 /* Footer */
 footer, .footer {
