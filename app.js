@@ -11,6 +11,10 @@ let timerID;
 const countDown = document.getElementById('timer-display');
 
 startButton.addEventListener("click", function() {
+    if (timerID){
+        return;
+    }
+   
     timerID = setInterval(function() {
         const minutes = Math.floor(time / 60);
         let seconds = time % 60;
@@ -18,15 +22,24 @@ startButton.addEventListener("click", function() {
         countDown.innerHTML = `${minutes}:${seconds}`;
         time--;
         progressBar.value += 1;
+
+        if (countDown.innerHTML == '0:00'){
+            clearInterval(timerID);
+        }
     }, 1000);
 });
 
 pauseButton.addEventListener("click", function(){
     clearInterval(timerID);
+    timerID = null;
 });
 
 resetButton.addEventListener("click", function(){
     clearInterval(timerID);
+    time = 60;
     countDown.innerHTML = "1:00"
+    progressBar.value = "0";
+    timerID = null;
+    console.log("After reset, timerID is:", timerID);
 });
 
